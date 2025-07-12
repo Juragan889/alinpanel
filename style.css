@@ -1,0 +1,57 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: url('https://files.catbox.moe/zdhv81.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 20px;
+  color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+
+.product-card h2 {
+  margin-top: 0;
+  color: #00e5ff;
+}
+
+.product-card p, .product-card ul {
+  font-size: 16px;
+  text-align: left;
+  margin-left: 20px;
+  color: #eee;
+}
+
+.product-card a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00aaff;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.product-card a:hover {
+  background: #0088cc;
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #ccc;
+}
