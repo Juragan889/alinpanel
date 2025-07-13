@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AlinStore Order Panel</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #121212;
+      color: #fff;
+      padding: 20px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      background: #00aaff;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #555;
+    }
+    #notif {
+      margin-top: 20px;
+      display: none;
+      background: #28a745;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌥 AlinStore Order Panel 🌥</h1>
+  <div class="form-container">
+    <input type="text" id="nama" placeholder="Nama Kamu" required>
+    <input type="text" id="nomorwa" placeholder="Nomor WhatsApp" required>
+    <select id="produk">
+      <option value="Panel 4GB">Panel 4GB - Rp4.000</option>
+      <option value="Panel 5GB">Panel 5GB - Rp5.000</option>
+      <option value="Panel 6GB">Panel 6GB - Rp6.000</option>
+      <option value="Panel 7GB">Panel 7GB - Rp7.000</option>
+      <option value="Panel 8GB">Panel 8GB - Rp8.000</option>
+      <option value="Panel 9GB">Panel 9GB - Rp9.000</option>
+      <option value="Panel UNLI">Panel UNLIMITED - Rp10.000</option>
+      <option value="Reseller Private">Reseller Panel Private - Rp20.000</option>
+      <option value="Panel Public">Panel Unli Public - Rp5.000</option>
+      <option value="PainMood V3">Script PainMood V3 - Rp15.000/30.000</option>
+    </select>
+    <input type="text" id="namapanel" placeholder="Nama Panel (Username)" required>
+    <textarea id="catatan" placeholder="Catatan Tambahan"></textarea>
+    <button id="kirimBtn" onclick="kirimPesanan()">Kirim Pesanan</button>
+    <div id="notif">✅ Pesanan berhasil dikirim! Mengalihkan ke WhatsApp...</div>
+  </div>
+<video autoplay loop style="display:none">
+  <source src="https://files.catbox.moe/1bv5w9.mp4" type="video/mp4">
+</video>
+
+  <script>
+    function kirimPesanan() {
+      const nama = document.getElementById('nama').value;
+      const nomorwa = document.getElementById('nomorwa').value;
+      const produk = document.getElementById('produk').value;
+      const namapanel = document.getElementById('namapanel').value;
+      const catatan = document.getElementById('catatan').value;
+      const btn = document.getElementById('kirimBtn');
+      const notif = document.getElementById('notif');
+
+      if (!nama || !nomorwa || !namapanel) {
+        alert('Harap isi semua data wajib.');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerText = 'Proses...';
+
+      setTimeout(() => {
+        notif.style.display = 'block';
+        btn.innerText = 'Success ✅';
+
+        const pesan = `📦 ORDER PANEL\nNama: ${nama}\nNomor: ${nomorwa}\nProduk: ${produk}\nNama Panel: ${namapanel}\nCatatan: ${catatan}`;
+        const url = `https://wa.me/62895327468726?text=${encodeURIComponent(pesan)}`;
+<video autoplay loop style="display:none">
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 1500);
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
